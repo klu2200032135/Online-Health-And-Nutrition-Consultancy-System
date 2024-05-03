@@ -1,0 +1,20 @@
+<!-- doctor/templates/doctor/view_appointments.html -->
+
+{% extends 'doctor/base_doctor.html' %}
+
+{% block title %}View Appointments - Ohna Doctor{% endblock %}
+
+{% block content %}
+    <h2>View Appointments</h2>
+
+    <!-- Your logic for displaying a list of appointments goes here -->
+    <!-- Example: -->
+    <ul>
+        {% for appointment in appointments %}
+            <li>
+                {{ appointment.client_name }} - {{ appointment.appointment_date }}
+                <a href="{% url 'doctor:view_appointment_details' appointment.id %}">View Details</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

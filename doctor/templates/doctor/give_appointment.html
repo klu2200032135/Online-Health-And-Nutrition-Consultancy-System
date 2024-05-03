@@ -1,0 +1,27 @@
+<!-- doctor/templates/doctor/give_appointment.html -->
+
+{% extends 'doctor/base_doctor.html' %}
+
+{% block title %}Give Appointment - Ohna Doctor{% endblock %}
+
+{% block content %}
+    <h2>Give Appointment</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="client_name" class="form-label">Client Name:</label>
+            <input type="text" class="form-control" id="client_name" name="client_name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="appointment_date" class="form-label">Appointment Date:</label>
+            <input type="datetime-local" class="form-control" id="appointment_date" name="appointment_date" required>
+        </div>
+
+        <!-- Add more form fields as needed -->
+
+        <button type="submit" class="btn btn-primary">Give Appointment</button>
+    </form>
+{% endblock %}
